@@ -1,0 +1,31 @@
+/*resets*/
+.listItems, .listItems li > div > p, .listItems li > div > h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #F4F4F4;
+  font-family: sans-serif;
+  color: #444444;
+  font-size: 1em;
+  text-align: center; }
+
+.contentMaster {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center; }
+
+.chartContainer {
+  width: 400px; }

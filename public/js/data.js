@@ -103,7 +103,10 @@ function showPollResults2 (data) {
                     break;
                 }
             };
+
         }
+
+
 
         temp.name = name.replace("room:","");
 
@@ -113,6 +116,8 @@ function showPollResults2 (data) {
 
         tags.push(temp);
     });
+
+
 
     tags.sort(function (a,b) {
         if (a.team != b.team) {
@@ -129,7 +134,7 @@ function showPollResults2 (data) {
         var row = $("<tr/>")
                 .attr("id", "tag-" + tagindex)
                 .append($("<td/>").text(toTitleCase(tag.name.replace("_"," "))));
-
+        console.log(toTitleCase(tag.name.replace("_"," ")));
         tag.answers.forEach(function(anAnswer, index) {
 
             var percentage = (anAnswer/tag.total*100).toFixed(1) * 1;

@@ -1,0 +1,48 @@
+$primary-font: sans-serif;
+$primary-font-color: #444444;
+$orange-font-color:#DF6800;
+$primary-gray-bkg-color: #F4F4F4;
+$primary-gray-border-color:#E7E7EF;
+
+
+
+$test-blue-color:blue;
+$test-orange-color:orange;
+$test-white-color:white;
+$test-green-color:green;
+$test-red-color:red;
+$test-yellow-color:yellow;
+/*resets*/
+.listItems, .listItems li > div > p, .listItems li > div > h2{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+}
+*, *:before, *:after
+{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html, body
+{
+    width: 100%;
+    height: 100%;   
+    margin: 0;
+    padding: 0;
+    background: $primary-gray-bkg-color;
+    font-family: $primary-font;
+    color: $primary-font-color;
+    font-size: 1em;
+    text-align: center;
+}
+.contentMaster{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;      
+}
+.chartContainer{
+  width: 400px;
+}
