@@ -21,11 +21,30 @@ html, body {
   font-size: 1em;
   text-align: center; }
 
-.contentMaster {
+#title {
+  background: #5A6475;
+  margin: 0px;
+  padding: 20px 0 20px 0;
+  font-size: 1.5em;
+  color: #F4F4F4;
+  font-weight: none;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3); }
+
+#wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: center; }
+
+.contentMaster {
+  width: 900px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  align-content: center; }
+  align-content: center;
+  flex-wrap: wrap; }
 
 .chartContainer {
-  width: 600px; }
+  width: 400px;
+  margin: 20px;
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3); }

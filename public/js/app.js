@@ -4,17 +4,23 @@
 
     //function to build and append a chart in DOM
     function createChart(question, answers, surveyed, votes) {
-
+        var _SURVEYED = [];
+        var _VOTES = [];
         var _QUESTION = question;
         var _ANSWERS = answers;
-        var _SURVEYED = surveyed;
-        var _VOTES = votes;
 
+        //Slice first group of votes - Age
+        _SURVEYED[0] = surveyed.slice(0, 6);
+        _VOTES[0] = votes[0].slice(0, 6);
+        _VOTES[1] = votes[1].slice(0, 6);
+        _VOTES[2] = votes[2].slice(0, 6);
+
+        //build a first Age chart
         var _CHART = document.getElementById('dataEdad');
         var lineChart = new Chart(_CHART, {
             type: 'line',
             data: {
-                labels: _SURVEYED,
+                labels: _SURVEYED[0],
                 datasets: [{
                     label: _ANSWERS[2],
                     fill: true,
@@ -74,6 +80,272 @@
                     pointRadius: 1,
                     pointHitRadius: 10,
                     data: _VOTES[1],
+                    spanGaps: false
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        //Slice second group of votes - Status
+        _SURVEYED[1] = surveyed.slice(7, 12);
+        _VOTES[3] = votes[0].slice(7, 12);
+        _VOTES[4] = votes[1].slice(7, 12);
+        _VOTES[5] = votes[2].slice(7, 12);
+
+        //console.log(_SURVEYED[1])
+        //console.log(_VOTES[3])
+
+
+        //build a second Status chart
+        var _CHART2 = document.getElementById('dataEstado');
+        var lineChart2 = new Chart(_CHART2, {
+            type: 'line',
+            data: {
+                labels: _SURVEYED[1],
+                datasets: [{
+                    label: _ANSWERS[2],
+                    fill: true,
+                    backgroundColor: "rgba(161,209,84,0.2)",
+                    borderColor: "rgba(161,209,84,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(161,209,84,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(161,209,84,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: _VOTES[5],
+                    spanGaps: false
+                }, {
+                    label: _ANSWERS[0],
+                    fill: true,
+                    backgroundColor: "rgba(167,141,228,0.4)",
+                    borderColor: "rgba(167,141,228,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(167,141,228,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(167,141,228,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: _VOTES[3],
+                    spanGaps: false
+                }, {
+                    label: _ANSWERS[1],
+                    fill: true,
+                    backgroundColor: "rgba(52,211,235,0.4)",
+                    borderColor: "rgba(52,211,235,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(52,211,235,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(52,211,235,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: _VOTES[4],
+                    spanGaps: false
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        //Slice second group of votes - Status
+        _SURVEYED[2] = surveyed.slice(13, 19);
+        _VOTES[6] = votes[0].slice(13, 19);
+        _VOTES[7] = votes[1].slice(13, 19);
+        _VOTES[8] = votes[2].slice(13, 19);
+
+        //console.log(_SURVEYED[2])
+        //console.log(_VOTES[6])
+
+
+        //build a third others chart
+        var _CHART3 = document.getElementById('dataOtros');
+        var lineChart3 = new Chart(_CHART3, {
+            type: 'line',
+            data: {
+                labels: _SURVEYED[2],
+                datasets: [{
+                    label: _ANSWERS[2],
+                    fill: true,
+                    backgroundColor: "rgba(161,209,84,0.2)",
+                    borderColor: "rgba(161,209,84,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(161,209,84,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(161,209,84,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: _VOTES[8],
+                    spanGaps: false
+                }, {
+                    label: _ANSWERS[0],
+                    fill: true,
+                    backgroundColor: "rgba(167,141,228,0.4)",
+                    borderColor: "rgba(167,141,228,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(167,141,228,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(167,141,228,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: _VOTES[6],
+                    spanGaps: false
+                }, {
+                    label: _ANSWERS[1],
+                    fill: true,
+                    backgroundColor: "rgba(52,211,235,0.4)",
+                    borderColor: "rgba(52,211,235,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(52,211,235,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(52,211,235,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: _VOTES[7],
+                    spanGaps: false
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        //Slice second group of votes - Status
+        _SURVEYED[3] = surveyed.slice(20);
+        _VOTES[9] = votes[0].slice(20);
+        _VOTES[10] = votes[1].slice(20);
+        _VOTES[11] = votes[2].slice(20);
+
+        console.log(_SURVEYED[3]);
+        console.log(_VOTES[9]);
+
+        //build a fourth city chart
+        var _CHART4 = document.getElementById('dataProvincias');
+        var lineChart4 = new Chart(_CHART4, {
+            type: 'line',
+            data: {
+                labels: _SURVEYED[3],
+                datasets: [{
+                    label: _ANSWERS[2],
+                    fill: true,
+                    backgroundColor: "rgba(161,209,84,0.2)",
+                    borderColor: "rgba(161,209,84,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(161,209,84,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(161,209,84,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: _VOTES[11],
+                    spanGaps: false
+                }, {
+                    label: _ANSWERS[0],
+                    fill: true,
+                    backgroundColor: "rgba(167,141,228,0.4)",
+                    borderColor: "rgba(167,141,228,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(167,141,228,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(167,141,228,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: _VOTES[9],
+                    spanGaps: false
+                }, {
+                    label: _ANSWERS[1],
+                    fill: true,
+                    backgroundColor: "rgba(52,211,235,0.4)",
+                    borderColor: "rgba(52,211,235,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(52,211,235,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(52,211,235,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: _VOTES[10],
                     spanGaps: false
                 }]
             },
