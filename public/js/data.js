@@ -196,7 +196,7 @@ function showPollResults2 (data) {
     });
 
 
-    $("#pollResultsPage .content").remove();
+   
 
     $("#pollResultsPage")
         .addClass("background1")
